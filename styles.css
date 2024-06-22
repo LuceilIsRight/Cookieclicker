@@ -47,10 +47,10 @@ nav ul li a:hover {
 
 .game-container, .home-container, .about-container {
     text-align: center;
-    background-color: #90EE90; /* Light green background */
+    background-color: #808000; /* Olive green background */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow to separate from background */
     margin-top: 60px; /* Add margin to avoid overlap with fixed header */
     max-width: 800px; /* Limit the maximum width of the container */
     width: 100%; /* Make the container responsive */
