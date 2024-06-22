@@ -7,6 +7,8 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
+    padding: 20px; /* Add padding to the body */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 header {
@@ -41,13 +43,27 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.game-container {
+.game-container, .home-container, .about-container {
     text-align: center;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 60px; /* Add margin to avoid overlap with fixed header */
+    max-width: 800px; /* Limit the maximum width of the container */
+    width: 100%; /* Make the container responsive */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 #cookie-button {
@@ -66,7 +82,7 @@ nav ul li a:hover {
         margin: 0 10px;
     }
 
-    .game-container {
+    .game-container, .home-container, .about-container {
         padding: 15px;
         margin-top: 50px; /* Adjust margin for smaller screens */
     }
