@@ -68,10 +68,19 @@ p {
     margin-bottom: 20px;
 }
 
-#cookie-button {
+#cookie-button, button {
     font-size: 20px;
     padding: 10px 20px;
     margin: 20px 0;
+    background-color: #808000; /* Olive green background */
+    border: 2px solid #000000; /* Black border */
+    color: #000000; /* Black text color */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cookie-button:hover, button:hover {
+    background-color: #6b8e23; /* Darker olive green on hover */
 }
 
 /* Media query for mobile devices */
@@ -89,7 +98,7 @@ p {
         margin-top: 50px; /* Adjust margin for smaller screens */
     }
 
-    #cookie-button {
+    #cookie-button, button {
         font-size: 18px;
         padding: 8px 16px;
     }
