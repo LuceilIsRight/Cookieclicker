@@ -6,9 +6,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #808000; /* Olive green background */
     padding: 20px; /* Add padding to the body */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    color: #00FF00; /* Lime green foreground */
 }
 
 header {
@@ -34,7 +35,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #00FF00; /* Lime green foreground */
     text-decoration: none;
     font-weight: bold;
 }
@@ -96,7 +97,7 @@ p {
 footer {
     width: 100%;
     background-color: #333;
-    color: #fff;
+    color: #00FF00; /* Lime green foreground */
     text-align: center;
     padding: 10px 0;
     position: fixed;
