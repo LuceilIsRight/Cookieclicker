@@ -20,7 +20,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
-    color: #FFFFFF; /* White text color */
+    color: #000000; /* White text color */
 }
 
 nav ul {
@@ -50,7 +50,7 @@ nav ul li a:hover {
     background-color: #808000; /* Olive green background */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow to separate from background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow to separate from background */
     margin-top: 60px; /* Add margin to avoid overlap with fixed header */
     max-width: 800px; /* Limit the maximum width of the container */
     width: 100%; /* Make the container responsive */
