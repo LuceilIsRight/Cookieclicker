@@ -23,7 +23,7 @@
                 <li><a href="game.html">Play Game</a></li>
                 {% if 'username' in session %}
                     <li><a href="/logout">Logout</a></li>
-                    <li>Welcome, {{ session['username'] }}!</li>
+                    <li>Welcome, Player!</li>
                 {% else %}
                     <li><a href="/signup">Sign Up</a></li>
                     <li><a href="/login">Login</a></li>
