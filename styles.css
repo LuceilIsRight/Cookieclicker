@@ -48,10 +48,10 @@ nav ul li a:hover {
     background-color: #fff; /* White container */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
     margin-top: 80px; /* Space for header */
     margin-bottom: 60px; /* Space for footer */
-    max-width: 400px; /* Narrow like Ghibli game */
+    max-width: 200px; /* Narrow like Ghibli game */
     width: 100%;
     box-sizing: border-box;
 }
