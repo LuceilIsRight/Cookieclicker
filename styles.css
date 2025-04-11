@@ -1,20 +1,18 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Change from center to space-between */
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #808000; /* Olive green background */
-    padding: 20px; /* Add padding to the body */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    color: #000000; /* Black text color */
+    background-color: #f0f4f8; /* Light blue-gray base */
+    background-image: linear-gradient(to bottom, #a3d8f4, #f0f4f8); /* Ghibli-inspired gradient */
+    color: #34495e; /* Dark blue-gray text color */
 }
 
 header {
     width: 100%;
-    background-color: #333;
+    background-color: #2c3e50; /* Dark blue-gray */
     padding: 10px 0;
     position: fixed;
     top: 0;
@@ -45,42 +43,86 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.game-container, .home-container, .about-container {
+.game-container {
     text-align: center;
-    background-color: #808000; /* Olive green background */
+    background-color: #fff; /* White container */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add shadow to separate from background */
-    margin-top: 60px; /* Add margin to avoid overlap with fixed header */
-    max-width: 800px; /* Limit the maximum width of the container */
-    width: 100%; /* Make the container responsive */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 80px; /* Space for header */
+    margin-bottom: 60px; /* Space for footer */
+    max-width: 400px; /* Narrow like Ghibli game */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 24px;
     margin-bottom: 20px;
+    color: #2c3e50; /* Dark blue-gray */
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;
+    color: #34495e; /* Dark blue-gray */
 }
 
-#cookie-button, button {
-    font-size: 20px;
+input {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7; /* Light gray border */
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+button {
+    font-size: 16px;
     padding: 10px 20px;
-    margin: 20px 0;
-    background-color: #808000; /* Olive green background */
-    border: 2px solid #000000; /* Black border */
-    color: #000000; /* Black text color */
+    margin: 5px;
+    background-color: #3498db; /* Ghibli blue */
+    border: none;
+    color: #FFFFFF; /* White text */
     border-radius: 5px;
     cursor: pointer;
 }
 
-#cookie-button:hover, button:hover {
-    background-color: #6b8e23; /* Darker olive green on hover */
+button:hover {
+    background-color: #2980b9; /* Darker blue */
+}
+
+#skip-btn {
+    background-color: #f1c40f; /* Ghibli yellow */
+}
+
+#skip-btn:hover {
+    background-color: #e67e22; /* Darker yellow */
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #e74c3c; /* Red for incorrect */
+}
+
+.correct {
+    color: #2ecc71; /* Green for correct */
+}
+
+#score {
+    font-size: 18px;
+    color: #2c3e50; /* Dark blue-gray */
+    margin-bottom: 20px;
+}
+
+#game-over {
+    font-size: 18px;
+    color: #2ecc71; /* Green */
+    margin-top: 20px;
+    display: none;
 }
 
 /* Media query for mobile devices */
@@ -93,21 +135,22 @@ p {
         margin: 0 10px;
     }
 
-    .game-container, .home-container, .about-container {
+    .game-container {
         padding: 15px;
-        margin-top: 50px; /* Adjust margin for smaller screens */
+        margin-top: 70px;
+        margin-bottom: 50px;
     }
 
-    #cookie-button, button {
-        font-size: 18px;
+    button {
+        font-size: 14px;
         padding: 8px 16px;
     }
 }
 
 footer {
     width: 100%;
-    background-color: #333;
-    color: #FFFFFF; /* White text color */
+    background-color: #2c3e50; /* Dark blue-gray */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 10px 0;
     position: fixed;
