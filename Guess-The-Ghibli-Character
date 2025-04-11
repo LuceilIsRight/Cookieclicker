@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Ghibli Character</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: linear-gradient(to bottom, #a3d8f4, #f0f4f8);
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #34495e;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #e74c3c;
+        }
+        .correct {
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Ghibli Character</h1>
+        <p id="description">I’m a young girl who moves to the countryside and discovers a magical spirit world with a bathhouse for gods.</p>
+        <input type="text" id="guess" placeholder="Enter character name">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        // Array of characters with descriptions and answers
+        const characters = [
+            {
+                description: "I’m a young girl who moves to the countryside and discovers a magical spirit world with a bathhouse for gods.",
+                answer: "Chihiro"
+            },
+            {
+                description: "I’m a boy who flies a red plane and was cursed to have the head of a pig.",
+                answer: "Porco Rosso"
+            },
+            {
+                description: "I’m a forest spirit who looks like a deer with a human-like face and many antlers.",
+                answer: "Forest Spirit"
+            },
+            {
+                description: "I’m a delivery girl who rides a broom and has a black cat as my best friend.",
+                answer: "Kiki"
+            }
+        ];
+
+        let currentCharacterIndex = 0;
+
+        // Function to check the player's guess
+        function checkGuess() {
+            const guessInput = document.getElementById("guess").value.trim().toLowerCase();
+            const correctAnswer = characters[currentCharacterIndex].answer.toLowerCase();
+            const result = document.getElementById("result");
+
+            if (guessInput === correctAnswer) {
+                result.textContent = "Correct! You’re a Ghibli master!";
+                result.classList.add("correct");
+                setTimeout(nextCharacter, 1500); // Move to next character after 1.5 seconds
+            } else {
+                result.textContent = "Oh no, that’s not right. Try again!";
+                result.classList.remove("correct");
+            }
+        }
+
+        // Function to load the next character
+        function nextCharacter() {
+            currentCharacterIndex = (currentCharacterIndex + 1) % characters.length; // Loop back to first character
+            document.getElementById("description").textContent = characters[currentCharacterIndex].description;
+            document.getElementById("guess").value = "";
+            document.getElementById("result").textContent = "";
+            document.getElementById("result").classList.remove("correct");
+        }
+    </script>
+</body>
+</html>
