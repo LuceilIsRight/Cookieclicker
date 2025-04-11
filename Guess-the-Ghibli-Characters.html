@@ -93,7 +93,7 @@
             <button id="skip-btn" onclick="skipCharacter()">Skip</button>
         </div>
         <p id="result"></p>
-        <p id="game-over">Congratulations! You’re a true Studio Ghibli legend!</p>
+        <p id="game-over"></p>
     </div>
 
     <script>
@@ -173,10 +173,23 @@
             document.getElementById("score").textContent = `Score: ${score} / ${totalCharacters}`;
         }
 
-        // Function to show the game over message
+        // Function to show the game over message based on score
         function showGameOver() {
             const gameOverMessage = document.getElementById("game-over");
-            gameOverMessage.textContent = `Congratulations! You’ve completed the game with a score of ${score} out of ${totalCharacters}! You’re a true Studio Ghibli legend!`;
+            let message;
+
+            // Conditional messages based on score
+            if (score === totalCharacters) {
+                message = `Perfect score! You got all ${score} out of ${totalCharacters} correct! You’re a true Studio Ghibli legend!`;
+            } else if (score >= Math.ceil(totalCharacters * 0.6)) { // 3 or more correct (60% or higher)
+                message = `Great job! You scored ${score} out of ${totalCharacters}! You know your Ghibli characters well!`;
+            } else if (score >= 1) {
+                message = `Nice try! You got ${score} out of ${totalCharacters} correct. Keep exploring the world of Ghibli!`;
+            } else {
+                message = `Oh no! You scored ${score} out of ${totalCharacters}. Dive back into Ghibli films and try again!`;
+            }
+
+            gameOverMessage.textContent = message;
             gameOverMessage.style.display = "block";
             document.getElementById("guess").disabled = true;
             document.querySelectorAll("button").forEach(button => button.disabled = true);
