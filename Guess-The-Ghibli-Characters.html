@@ -50,9 +50,16 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            margin: 5px;
         }
         button:hover {
             background-color: #2980b9;
+        }
+        #skip-btn {
+            background-color: #f1c40f;
+        }
+        #skip-btn:hover {
+            background-color: #e67e22;
         }
         #result {
             margin-top: 20px;
@@ -61,6 +68,11 @@
         }
         .correct {
             color: #2ecc71;
+        }
+        #score {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 20px;
         }
         #game-over {
             font-size: 18px;
@@ -73,11 +85,15 @@
 <body>
     <div class="container">
         <h1>Guess the Ghibli Character</h1>
+        <p id="score">Score: 0 / 5</p>
         <p id="description">I’m a young girl who moves to the countryside and discovers a magical spirit world with a bathhouse for gods.</p>
         <input type="text" id="guess" placeholder="Enter character name">
-        <button onclick="checkGuess()">Submit Guess</button>
+        <div>
+            <button onclick="checkGuess()">Submit Guess</button>
+            <button id="skip-btn" onclick="skipCharacter()">Skip</button>
+        </div>
         <p id="result"></p>
-        <p id="game-over">Congratulations! You’ve guessed all the Ghibli characters! You’re a true Studio Ghibli legend!</p>
+        <p id="game-over">Congratulations! You’re a true Studio Ghibli legend!</p>
     </div>
 
     <script>
@@ -106,41 +122,64 @@
         ];
 
         let currentCharacterIndex = 0;
-        let correctAnswers = 0;
+        let score = 0;
+        let charactersAnswered = 0;
+        const totalCharacters = characters.length;
 
         // Function to check the player's guess
         function checkGuess() {
             const guessInput = document.getElementById("guess").value.trim().toLowerCase();
             const correctAnswer = characters[currentCharacterIndex].answer.toLowerCase();
             const result = document.getElementById("result");
-            const gameOverMessage = document.getElementById("game-over");
 
             if (guessInput === correctAnswer) {
+                score++;
+                charactersAnswered++;
                 result.textContent = "Correct! You’re a Ghibli master!";
                 result.classList.add("correct");
-                correctAnswers++;
-                
-                // Check if all characters have been guessed
-                if (correctAnswers === characters.length) {
-                    gameOverMessage.style.display = "block";
-                    document.getElementById("guess").disabled = true;
-                    document.querySelector("button").disabled = true;
-                } else {
-                    setTimeout(nextCharacter, 1500); // Move to next character after 1.5 seconds
-                }
+                updateScore();
+                setTimeout(nextCharacter, 1500); // Move to next character after 1.5 seconds
             } else {
-                result.textContent = "Oh no, that’s not right. Try again!";
+                result.textContent = "Oh no, that’s not right. Try again or skip!";
                 result.classList.remove("correct");
             }
         }
 
+        // Function to skip to the next character
+        function skipCharacter() {
+            charactersAnswered++;
+            document.getElementById("result").textContent = `Skipped! The answer was ${characters[currentCharacterIndex].answer}.`;
+            document.getElementById("result").classList.remove("correct");
+            setTimeout(nextCharacter, 1500);
+        }
+
         // Function to load the next character
         function nextCharacter() {
-            currentCharacterIndex = (currentCharacterIndex + 1) % characters.length;
+            // Check if all characters have been answered
+            if (charactersAnswered >= totalCharacters) {
+                showGameOver();
+                return;
+            }
+
+            currentCharacterIndex = (currentCharacterIndex + 1) % totalCharacters;
             document.getElementById("description").textContent = characters[currentCharacterIndex].description;
             document.getElementById("guess").value = "";
             document.getElementById("result").textContent = "";
             document.getElementById("result").classList.remove("correct");
+        }
+
+        // Function to update the score display
+        function updateScore() {
+            document.getElementById("score").textContent = `Score: ${score} / ${totalCharacters}`;
+        }
+
+        // Function to show the game over message
+        function showGameOver() {
+            const gameOverMessage = document.getElementById("game-over");
+            gameOverMessage.textContent = `Congratulations! You’ve completed the game with a score of ${score} out of ${totalCharacters}! You’re a true Studio Ghibli legend!`;
+            gameOverMessage.style.display = "block";
+            document.getElementById("guess").disabled = true;
+            document.querySelectorAll("button").forEach(button => button.disabled = true);
         }
     </script>
 </body>
