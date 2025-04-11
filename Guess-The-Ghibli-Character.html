@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -61,6 +62,12 @@
         .correct {
             color: #2ecc71;
         }
+        #game-over {
+            font-size: 18px;
+            color: #2ecc71;
+            margin-top: 20px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +77,7 @@
         <input type="text" id="guess" placeholder="Enter character name">
         <button onclick="checkGuess()">Submit Guess</button>
         <p id="result"></p>
+        <p id="game-over">Congratulations! You’ve guessed all the Ghibli characters! You’re a true Studio Ghibli legend!</p>
     </div>
 
     <script>
@@ -90,21 +98,36 @@
             {
                 description: "I’m a delivery girl who rides a broom and has a black cat as my best friend.",
                 answer: "Kiki"
+            },
+            {
+                description: "I’m a moving castle powered by a fire demon, owned by a wizard with a flair for theatrics.",
+                answer: "Howl's Moving Castle"
             }
         ];
 
         let currentCharacterIndex = 0;
+        let correctAnswers = 0;
 
         // Function to check the player's guess
         function checkGuess() {
             const guessInput = document.getElementById("guess").value.trim().toLowerCase();
             const correctAnswer = characters[currentCharacterIndex].answer.toLowerCase();
             const result = document.getElementById("result");
+            const gameOverMessage = document.getElementById("game-over");
 
             if (guessInput === correctAnswer) {
                 result.textContent = "Correct! You’re a Ghibli master!";
                 result.classList.add("correct");
-                setTimeout(nextCharacter, 1500); // Move to next character after 1.5 seconds
+                correctAnswers++;
+                
+                // Check if all characters have been guessed
+                if (correctAnswers === characters.length) {
+                    gameOverMessage.style.display = "block";
+                    document.getElementById("guess").disabled = true;
+                    document.querySelector("button").disabled = true;
+                } else {
+                    setTimeout(nextCharacter, 1500); // Move to next character after 1.5 seconds
+                }
             } else {
                 result.textContent = "Oh no, that’s not right. Try again!";
                 result.classList.remove("correct");
@@ -113,7 +136,7 @@
 
         // Function to load the next character
         function nextCharacter() {
-            currentCharacterIndex = (currentCharacterIndex + 1) % characters.length; // Loop back to first character
+            currentCharacterIndex = (currentCharacterIndex + 1) % characters.length;
             document.getElementById("description").textContent = characters[currentCharacterIndex].description;
             document.getElementById("guess").value = "";
             document.getElementById("result").textContent = "";
