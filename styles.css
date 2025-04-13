@@ -6,23 +6,11 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #a3d8f4, #6d82d2, #f4a3d8); /* Vibrant gradient */
-    background-size: 200% 200%;
-    animation: gradientShift 10s ease infinite; /* Animated gradient */
-    color: #1a1a2e; /* Deep charcoal text */
-    overflow-y: auto; /* Smooth scrolling */
-}
-
-/* Body styles from second file (overriding where applicable) */
-body {
-    font-family: 'Arial', sans-serif; /* Overridden by Poppins */
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
     background: linear-gradient(to right, #6b48ff, #d66efd); /* Purple gradient like the image */
     color: #fff;
     display: flex;
     flex-direction: column; /* Overrides align-items/justify-content */
+    overflow-y: auto; /* Smooth scrolling */
 }
 
 /* Animation from first file */
@@ -32,7 +20,7 @@ body {
     100% { background-position: 0% 0%; }
 }
 
-/* Game container styles from first file */
+/* Game container styles from first file (adapted for sections) */
 .game-container {
     text-align: center;
     background: rgba(255, 255, 255, 0.1); /* Glassmorphism background */
@@ -40,9 +28,7 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-    margin-top: 90px;
-    margin-bottom: 70px;
-    max-width: 300px;
+    margin: 20px;
     width: 100%;
     box-sizing: border-box;
     border: 1px solid rgba(255, 255, 255, 0.3); /* Frosted border */
@@ -58,26 +44,32 @@ body {
 h1 {
     font-size: 28px;
     margin-bottom: 25px;
-    color: #ff6f61; /* Neon coral */
+    color: #d66efd; /* Matching the image's accent color */
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #fff;
 }
 
 p {
     font-size: 16px;
     line-height: 1.8;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     color: #e0e0e0; /* Light gray for contrast */
     font-weight: 300;
 }
 
-/* Input styles from first file */
+/* Input styles from first file (if needed, but not in this context) */
 input {
     padding: 12px;
     width: 85%;
     margin-bottom: 20px;
     border: none;
-    border-radius: 25px; /* Rounded input */
+    border-radius: 25px;
     font-size: 14px;
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.2);
@@ -88,31 +80,31 @@ input {
 
 input:focus {
     background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 10px rgba(255, 111, 97, 0.5); /* Neon glow */
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
 }
 
-/* Button styles from first file */
+/* Button styles from first file (if needed, but not in this context) */
 button {
     font-size: 16px;
     padding: 12px 25px;
     margin: 5px;
-    background: linear-gradient(45deg, #ff6f61, #6d82d2); /* Gradient button */
+    background: linear-gradient(45deg, #ff6f61, #6d82d2);
     border: none;
     color: #ffffff;
-    border-radius: 25px; /* Rounded button */
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
 }
 
 button:hover {
-    transform: scale(1.05); /* Scale up on hover */
+    transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
     background: linear-gradient(45deg, #ff4e50, #4a6dd2);
 }
 
 #skip-btn {
-    background: linear-gradient(45deg, #f1c40f, #e67e22); /* Gradient yellow-orange */
+    background: linear-gradient(45deg, #f1c40f, #e67e22);
 }
 
 #skip-btn:hover {
@@ -122,17 +114,17 @@ button:hover {
 #result {
     margin-top: 20px;
     font-size: 16px;
-    color: #ff4e50; /* Bright red */
+    color: #ff4e50;
     font-weight: 500;
 }
 
 .correct {
-    color: #2ecc71; /* Vibrant green */
+    color: #2ecc71;
 }
 
 #score {
     font-size: 18px;
-    color: #ff6f61; /* Neon coral */
+    color: #ff6f61;
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -168,6 +160,7 @@ main {
     gap: 20px;
     padding: 20px;
     flex-grow: 1;
+    width: 100%;
 }
 
 .about-section, .portfolio-section, .contact-section {
@@ -175,6 +168,7 @@ main {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff; /* Ensure text is visible */
 }
 
 .about-section h1, .portfolio-section h1, .contact-section h1 {
@@ -193,6 +187,7 @@ main {
 
 .about-section ul li {
     margin: 5px 0;
+    color: #fff; /* Ensure list items are visible */
 }
 
 .portfolio-section .project {
@@ -209,7 +204,7 @@ main {
 }
 
 .contact-section a {
-    color: #00cc99; /* Changed to a trendy teal color */
+    color: #00cc99; /* Trendy teal color */
     text-decoration: none;
     margin: 0 5px;
 }
@@ -233,7 +228,7 @@ footer {
 }
 
 footer a {
-    color: #00cc99; /* Changed to a trendy teal color */
+    color: #00cc99; /* Trendy teal color */
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease;
@@ -253,7 +248,7 @@ footer {
 }
 
 footer a {
-    color: #00cc99; /* Changed to a trendy teal color */
+    color: #00cc99; /* Trendy teal color */
     text-decoration: none;
     margin: 0 10px;
 }
