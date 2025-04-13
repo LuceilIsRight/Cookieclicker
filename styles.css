@@ -1,5 +1,3 @@
-/* Combined CSS from both files */
-
 /* Body styles from first file */
 body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; /* Trendy font */
@@ -32,77 +30,6 @@ body {
     0% { background-position: 0% 0%; }
     50% { background-position: 100% 100%; }
     100% { background-position: 0% 0%; }
-}
-
-/* Header styles from first file */
-header {
-    width: 100%;
-    background: linear-gradient(90deg, #1a1a2e, #16213e); /* Gradient header */
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Elevated shadow */
-    backdrop-filter: blur(5px); /* Glassmorphism effect */
-    color: #ffffff;
-}
-
-/* Header styles from second file (overriding where applicable) */
-header {
-    background: #2c2c54; /* Dark header */
-    padding: 10px 0; /* Overrides 15px 0 */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-/* Nav styles from first file */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 25px; /* Trendy spacing */
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 5px 15px;
-    transition: all 0.3s ease; /* Smooth transition */
-}
-
-nav ul li a:hover {
-    color: #ff6f61; /* Neon coral accent */
-    text-decoration: none;
-    transform: translateY(-2px); /* Subtle lift effect */
-    background: rgba(255, 111, 97, 0.2); /* Subtle hover background */
-    border-radius: 5px;
-}
-
-/* Nav styles from second file (overriding where applicable) */
-nav ul {
-    display: flex;
-    justify-content: space-around; /* Overrides justify-content: center */
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li a {
-    color: #fff; /* Overrides #ffffff */
-    text-decoration: none;
-    font-weight: bold; /* Overrides 600 */
-}
-
-nav ul li a:hover {
-    color: #d66efd; /* Overrides #ff6f61 */
 }
 
 /* Game container styles from first file */
@@ -221,14 +148,6 @@ button:hover {
 
 /* Media query from first file */
 @media (max-width: 600px) {
-    header {
-        padding: 10px 0;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-
     .game-container {
         padding: 20px;
         margin-top: 80px;
@@ -290,7 +209,7 @@ main {
 }
 
 .contact-section a {
-    color: #d66efd;
+    color: #00cc99; /* Changed to a trendy teal color */
     text-decoration: none;
     margin: 0 5px;
 }
@@ -314,7 +233,7 @@ footer {
 }
 
 footer a {
-    color: #ff6f61;
+    color: #00cc99; /* Changed to a trendy teal color */
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease;
@@ -334,7 +253,7 @@ footer {
 }
 
 footer a {
-    color: #d66efd; /* Overrides #ff6f61 */
+    color: #00cc99; /* Changed to a trendy teal color */
     text-decoration: none;
     margin: 0 10px;
 }
@@ -352,4 +271,15 @@ footer a:hover {
     .about-section, .portfolio-section, .contact-section {
         margin-bottom: 20px;
     }
+}
+
+/* Global hyperlink color change */
+a {
+    color: #00cc99; /* Trendy teal color for all hyperlinks */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00b380; /* Slightly darker teal on hover */
+    text-decoration: underline;
 }
