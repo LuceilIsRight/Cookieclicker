@@ -5,88 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Param Deshmukh</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .icon-img {
-            width: 32px;
-            height: 32px;
-        }
-        header nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-around;
-            padding: 10px 0;
-        }
-        .about-section, .portfolio-section, .contact-section {
-            margin: 20px;
-            padding: 20px;
-        }
-        .portfolio-section a {
-            margin-right: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .fixed-icons {
-            position: fixed;
-            top: 50px;
-            right: 30px;
-        }
-    </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="about-section" id="about">
-        <h1>About Me</h1>
-        <p>Hi, I'm Param Deshmukh, a passionate and dedicated game developer with over two years of hands-on experience in HTML, CSS, Python, and JavaScript. I specialize in crafting engaging and interactive web-based games, bringing creative ideas to life through code. As a self-taught enthusiast in game design, I have honed my skills through persistent learning and practical application. My educational background includes completing the prestigious CS50 Introduction to Computer Science and CS50 AI with Python certificate courses from Harvard University, which have equipped me with a solid foundation in computer science and artificial intelligence principles that I aim to apply in my game development projects in future.</p>
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>HTMLand Python Game Development</li>
-        </ul>
-        <h2>Education</h2>
-        <p>Self-taught developer with certifications in Python development.</p>
-        <h2>Interests</h2>
-        <p>Game design, ML, and exploring Studio Ghibli films.</p>
-    </div>
+    <main>
+        <section class="about-section" id="about">
+            <h1>About Me</h1>
+            <p>Hi, I'm Param Deshmukh, a passionate and dedicated game developer with over two years of hands-on experience in HTML, CSS, Python, and JavaScript. I specialize in crafting engaging and interactive web-based games, bringing creative ideas to life through code. As a self-taught enthusiast in game design, I have honed my skills through persistent learning and practical application. My educational background includes completing the prestigious CS50 Introduction to Computer Science and CS50 AI with Python certificate courses from Harvard University, which have equipped me with a solid foundation in computer science and artificial intelligence principles that I aim to apply in my game development projects in future.</p>
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>HTML and Python Game Development</li>
+            </ul>
+            <h2>Education</h2>
+            <p>Self-taught developer with certifications in Python development.</p>
+            <h2>Interests</h2>
+            <p>Game design, ML, and exploring Studio Ghibli films.</p>
+        </section>
 
-    <div class="about-section" id="about">
-        <h2>Projects</h2>
-        <div>
-            <h3>Cookie Clicker Game</h3>
-            <p>A fun clicker game where you test your Clicks per 10 seconds. Built with HTML, CSS, and JavaScript.</p>
-            <a href="game1.html"><img src="resources/image.png" alt="Cookie Clicker Game" class="icon-img" title="Cookie Clicker 10000"></a>
-            <p>Achievement: Reached 10,000 clicks!</p>
-        </div>
-        <div>
-            <h3>Guess the Ghibli Studio Character</h3>
-            <p>Test your knowledge with this Ghibli character-guessing game. Developed using HTML and JavaScript.</p>
-            <a href="Guess-the-Ghibli-Characters.html"><img src="resources/image1.png" alt="Guess the Ghibli Character" class="icon-img" title="Guess the Ghibli Character"></a>
-            <p>Achievement: Reached over 100 Plays!</p>
-        </div>
-    </div>
+        <section class="portfolio-section" id="portfolio">
+            <h1>Projects</h1>
+            <div class="project">
+                <h3>Cookie Clicker Game</h3>
+                <p>A fun clicker game where you test your Clicks per 10 seconds. Built with HTML, CSS, and JavaScript.</p>
+                <a href="game1.html"><img src="resources/image.png" alt="Cookie Clicker Game" class="icon-img" title="Cookie Clicker 10000"></a>
+                <p>Achievement: Reached 10,000 clicks!</p>
+            </div>
+            <div class="project">
+                <h3>Guess the Ghibli Studio Character</h3>
+                <p>Test your knowledge with this Ghibli character-guessing game. Developed using HTML and JavaScript.</p>
+                <a href="Guess-the-Ghibli-Characters.html"><img src="resources/image1.png" alt="Guess the Ghibli Character" class="icon-img" title="Guess the Ghibli Character"></a>
+                <p>Achievement: Reached over 100 Plays!</p>
+            </div>
+        </section>
 
-    <div class="contact-section" id="contact">
-        <h1>Contact</h1>
-        <p>Email: lucedeshmukh@gmail.com</p>
-        <p>Social Links: 
-            <a href="https://x.com/PyDeshParam">X</a> | 
-            <a href="https://github.com/LuceilIsRight">GitHub</a>
-            <a href="https://www.instagram.com/the_drowning_phoenix/">Instagram</a>
-        </p>
-        <p>Feel free to connect and collaborate on new projects!</p>
-    </div>
+        <section class="contact-section" id="contact">
+            <h1>Contact</h1>
+            <p>Email: lucedeshmukh@gmail.com</p>
+            <p>Social Links: 
+                <a href="https://x.com/PyDeshParam">X</a> | 
+                <a href="https://github.com/LuceilIsRight">GitHub</a> |
+                <a href="https://www.instagram.com/the_drowning_phoenix/">Instagram</a>
+            </p>
+            <p>Feel free to connect and collaborate on new projects!</p>
+        </section>
+    </main>
 
     <footer>
         <p>© 2023 Param Deshmukh. All rights reserved.</p>
-        <a href="home.html">Back to Top</a> | 
-        <a href="home.html">Privacy Policy</a>
+        <a href="#top">Back to Top</a> | 
+        <a href="#privacy">Privacy Policy</a>
     </footer>
 </body>
 </html>
