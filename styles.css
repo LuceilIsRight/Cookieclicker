@@ -1,3 +1,6 @@
+/* Combined CSS from both files */
+
+/* Body styles from first file */
 body {
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif; /* Trendy font */
     display: flex;
@@ -12,12 +15,26 @@ body {
     overflow-y: auto; /* Smooth scrolling */
 }
 
+/* Body styles from second file (overriding where applicable) */
+body {
+    font-family: 'Arial', sans-serif; /* Overridden by Poppins */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to right, #6b48ff, #d66efd); /* Purple gradient like the image */
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Overrides align-items/justify-content */
+}
+
+/* Animation from first file */
 @keyframes gradientShift {
     0% { background-position: 0% 0%; }
     50% { background-position: 100% 100%; }
     100% { background-position: 0% 0%; }
 }
 
+/* Header styles from first file */
 header {
     width: 100%;
     background: linear-gradient(90deg, #1a1a2e, #16213e); /* Gradient header */
@@ -31,6 +48,16 @@ header {
     color: #ffffff;
 }
 
+/* Header styles from second file (overriding where applicable) */
+header {
+    background: #2c2c54; /* Dark header */
+    padding: 10px 0; /* Overrides 15px 0 */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Nav styles from first file */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -60,6 +87,25 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+/* Nav styles from second file (overriding where applicable) */
+nav ul {
+    display: flex;
+    justify-content: space-around; /* Overrides justify-content: center */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff; /* Overrides #ffffff */
+    text-decoration: none;
+    font-weight: bold; /* Overrides 600 */
+}
+
+nav ul li a:hover {
+    color: #d66efd; /* Overrides #ff6f61 */
+}
+
+/* Game container styles from first file */
 .game-container {
     text-align: center;
     background: rgba(255, 255, 255, 0.1); /* Glassmorphism background */
@@ -81,6 +127,7 @@ nav ul li a:hover {
     50% { transform: translateY(-10px); }
 }
 
+/* Heading and paragraph styles from first file */
 h1 {
     font-size: 28px;
     margin-bottom: 25px;
@@ -97,6 +144,7 @@ p {
     font-weight: 300;
 }
 
+/* Input styles from first file */
 input {
     padding: 12px;
     width: 85%;
@@ -116,6 +164,7 @@ input:focus {
     box-shadow: 0 0 10px rgba(255, 111, 97, 0.5); /* Neon glow */
 }
 
+/* Button styles from first file */
 button {
     font-size: 16px;
     padding: 12px 25px;
@@ -170,7 +219,7 @@ button:hover {
     letter-spacing: 1px;
 }
 
-/* Media query for mobile devices */
+/* Media query from first file */
 @media (max-width: 600px) {
     header {
         padding: 10px 0;
@@ -193,6 +242,64 @@ button:hover {
     }
 }
 
+/* Main, section, and other styles from second file */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three-column layout */
+    gap: 20px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.about-section, .portfolio-section, .contact-section {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-section h1, .portfolio-section h1, .contact-section h1 {
+    margin-top: 0;
+    color: #d66efd; /* Matching the image's accent color */
+}
+
+.about-section h2, .portfolio-section h2, .contact-section h2 {
+    color: #fff;
+}
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-section ul li {
+    margin: 5px 0;
+}
+
+.portfolio-section .project {
+    margin-bottom: 20px;
+}
+
+.portfolio-section a {
+    margin-right: 10px;
+}
+
+.icon-img {
+    width: 32px;
+    height: 32px;
+}
+
+.contact-section a {
+    color: #d66efd;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles from first file */
 footer {
     width: 100%;
     background: linear-gradient(90deg, #1a1a2e, #16213e);
@@ -215,4 +322,34 @@ footer a {
 
 footer a:hover {
     color: #ffffff;
+}
+
+/* Footer styles from second file (overriding where applicable) */
+footer {
+    text-align: center;
+    padding: 10px 0; /* Overrides 15px 0 */
+    background: #2c2c54; /* Overrides gradient */
+    color: #fff;
+    width: 100%;
+}
+
+footer a {
+    color: #d66efd; /* Overrides #ff6f61 */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Overrides color change */
+}
+
+/* Media query from second file */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stack columns on mobile */
+    }
+
+    .about-section, .portfolio-section, .contact-section {
+        margin-bottom: 20px;
+    }
 }
