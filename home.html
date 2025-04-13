@@ -10,34 +10,93 @@
             width: 32px;
             height: 32px;
         }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+        .about-section, .portfolio-section, .contact-section {
+            margin: 20px;
+            padding: 20px;
+        }
+        .portfolio-section a {
+            margin-right: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .fixed-icons {
+            position: fixed;
+            top: 50px;
+            right: 30px;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="game1.html">Cookie Clicker</a></li>
-                <li><a href="Guess-the-Ghibli-Characters.html">Ghibli Game</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
-    
-        <p>
-        <img src="resources/image2.png" alt="HTML Games" width="55" height="55" style="position:fixed; top:50px; right:30px;" title="Click Icons To play HTML Games">
-        </a></p>
-        <p><a href="game1.html">
-        <img src="resources/image.png" alt="Cookie Clicker Game" class="icon-img" style="position:fixed; top:100px; right:30px;" title="Cookie Clicker 10000">
-        </a></p>
-     
-        <p><a href="Guess-the-Ghibli-Characters.html">
-        <img src="resources/image1.png" alt="Guess the Ghibli Character" class="icon-img" style="position:fixed; top:100px; right:70px;"title="Guess the Ghibli Character">
-        </a></p>
-    
+
+    <div class="about-section" id="about">
+        <h1>About Me</h1>
+        <p>Hi, I'm Param Deshmukh, a passionate game developer with 2+ years of experience in HTML, CSS, Python, and JavaScript. I specialize in creating interactive web games and am self-taught in game design. I did CS50 Introduction to Computer Science and CS50 AI with Python certificate courses.</p>
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Game Development</li>
+        </ul>
+        <h2>Education</h2>
+        <p>Self-taught developer with certifications in Web Development.</p>
+        <h2>Interests</h2>
+        <p>Game design, animation, and exploring Studio Ghibli films.</p>
+    </div>
+
+    <div class="portfolio-section" id="portfolio">
+        <h1>Portfolio</h1>
+        <h2>Projects</h2>
+        <div>
+            <h3>Cookie Clicker Game</h3>
+            <p>A fun clicker game where you test your Clicks per 10 seconds. Built with HTML, CSS, and JavaScript.</p>
+            <a href="game1.html"><img src="resources/image.png" alt="Cookie Clicker Game" class="icon-img" title="Cookie Clicker 10000"></a>
+            <p>Achievement: Reached 10,000 clicks!</p>
+        </div>
+        <div>
+            <h3>Guess the Ghibli Studio Character</h3>
+            <p>Test your knowledge with this Ghibli character-guessing game. Developed using HTML and JavaScript.</p>
+            <a href="Guess-the-Ghibli-Characters.html"><img src="resources/image1.png" alt="Guess the Ghibli Character" class="icon-img" title="Guess the Ghibli Character"></a>
+            <p>Achievement: Reached over 100 Plays!</p>
+        </div>
+    </div>
+
+    <div class="contact-section" id="contact">
+        <h1>Contact</h1>
+        <p>Email: param.deshmukh@example.com</p>
+        <p>Social Links: 
+            <a href="https://x.com/PyDeshParam">X</a> | 
+            <a href="https://github.com/LuceilIsRight">GitHub</a>
+        </p>
+        <p>Feel free to connect or collaborate on new projects!</p>
+    </div>
+
     <footer>
-        <p>© 2023 MyGames. All rights reserved.</p>
+        <p>© 2023 Param Deshmukh. All rights reserved.</p>
+        <a href="#top">Back to Top</a> | 
+        <a href="#privacy">Privacy Policy</a>
     </footer>
 </body>
 </html>
